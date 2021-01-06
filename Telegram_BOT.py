@@ -9,8 +9,8 @@ BOT = Bot(token=config.TOKEN)
 dp = Dispatcher(BOT)
 
 conn = psycopg2.connect(
-   database="telegram_db", user="postgres", 
-   password="51q0-5wkb-3jsx", host="127.0.0.1", port="5432"
+   database="d5n5h5pc213re6", user="maqdmqbshrzaxg", 
+   password="3dc6278794f20f0f306b06c4a0fde8ec8b42e86a9c932319245d86dc65a797ae", host="ec2-54-246-67-245.eu-west-1.compute.amazonaws.com", port="5432"
    )
    
 c = conn.cursor()
