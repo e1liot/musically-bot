@@ -31,8 +31,11 @@ async def start_function(message: types.Message):
 
 @dp.message_handler(content_types=['audio'])
 async def insert_audio_into_db(message):
-   c.execute(f'''INSERT INTO music_db VALUES ($${message.audio.performer + " - " + message.audio.title}$$, $${message.audio.file_id}$$)''')
-   conn.commit()
+   try:
+      c.execute(f'''INSERT INTO music_db VALUES ($${message.audio.performer + " - " + message.audio.title}$$, $${message.audio.file_id}$$)''')
+      conn.commit()
+   except:
+      c.execute("ROLLBACK")
 
 index_message = 0 
 
