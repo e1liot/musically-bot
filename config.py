@@ -1,4 +1,4 @@
-TOKEN = "1307175481:AAFepFNdCS7j5mBkWahWYCD27V-fZSKl03A"
+TOKEN = "your token should be here"
 
 STICKER_ID = [
     "CAACAgIAAxkBAAIHi199vb4_E6RaMEAXDRJlZwXwKsR8AAIQAwACtXHaBg7pgf4mdlGzGwQ",
