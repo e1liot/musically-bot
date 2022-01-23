@@ -9,8 +9,8 @@ BOT = Bot(token=config.TOKEN)
 dp = Dispatcher(BOT)
 
 conn = psycopg2.connect(
-   database="d5n5h5pc213re6", user="maqdmqbshrzaxg", 
-   password="3dc6278794f20f0f306b06c4a0fde8ec8b42e86a9c932319245d86dc65a797ae", host="ec2-54-246-67-245.eu-west-1.compute.amazonaws.com", port="5432"
+   database="database name", user="user", 
+   password="database password ", host="ec2-54-246-67-245.eu-west-1.compute.amazonaws.com", port="5432"
    )
    
 c = conn.cursor()
@@ -24,10 +24,9 @@ c.execute('''CREATE TABLE IF NOT EXISTS music_db(
 async def start_function(message: types.Message):
    if message.chat.last_name != None:
       await message.answer("Glad to see you, %s %s!" % (message.chat.first_name, message.chat.last_name))
-      await message.answer_animation(animation=random.choice(config.STICKER_ID)) 
    else:
       await message.answer("Glad to see you, %s!" % (message.chat.first_name))
-      await message.answer_animation(animation=random.choice(config.STICKER_ID))
+   await message.answer_animation(animation=random.choice(config.STICKER_ID))
 
 @dp.message_handler(content_types=['audio'])
 async def insert_audio_into_db(message):
@@ -82,7 +81,7 @@ async def search_in_database(message):
             else:
               break
 
-   if bool(dictionary) == True: # проверка на заполняемость словаря
+   if bool(dictionary) == True:
       return dictionary
    else: 
       pass
